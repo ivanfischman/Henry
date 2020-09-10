@@ -1,216 +1,125 @@
-// En estas primeras 6 preguntas, reemplaza `null` por la respuesta
-
-// Crea una variable "string", puede contener lo que quieras:
-const nuevaString = 'ivan';
-
-// Crea una variable numérica, puede ser cualquier número:
-const nuevoNum = 12;
-
-// Crea una variable booleana:
-const nuevoBool = true;
-
-// Resuelve el siguiente problema matemático:
-const nuevaResta = 10 - 5 === 5;
-
-// Resuelve el siguiente problema matemático:
-const nuevaMultiplicacion = 10 * 4 === 40 ;
-
-// Resuelve el siguiente problema matemático:
-const nuevoModulo = 21 % 5 === 1;
-
-
-// En los próximos 22 problemas, deberás completar la función.
-// Todo tu código irá dentro de las llaves de la función.
-// Asegúrate que usas "return" cuando la consola te lo pida.
-// Pista: "console.log()" NO fucionará.
 // No cambies los nombres de las funciones.
 
-function devolverString(str) {
-  // "Return" la string provista: str
+function devolverPrimerElemento(array) {
+  // Devuelve el primer elemento de un array
   // Tu código:
-  return str
+  return array[0]
 }
 
-function suma(x, y) {
-  // "x" e "y" son números
-  // Suma "x" e "y" juntos y devuelve el valor
+function devolverUltimoElemento(array) {
+  // Devuelve el último elemento de un array
   // Tu código:
-  return x + y
+  return array[array.length -1]
 }
 
-function resta(x, y) {
-  // Resta "x" de "y" y devuelve el valor
+function obtenerLargoDelArray(array) {
+  // Devuelve el largo de un array
   // Tu código:
-  return x - y
+  return array.length
 }
 
-function multiplica(x, y) {
-  // Multiplica "x" por "y" y devuelve el valor
+function incrementarPorUno(array) {
+  // "array" debe ser una matriz de enteros (int/integers)
+  // Aumenta cada entero por 1
+  // y devuelve el array
   // Tu código:
-  return x * y
-}
-
-function divide(x, y) {
-  // Divide "x" entre "y" y devuelve el valor
-  // Tu código:
-  return x / y
-}
-
-function sonIguales(x, y) {
-  // Devuelve "true" si "x" e "y" son iguales
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  if (x == y) {
-    return true
+  var nuevoArray = [];
+  for (var i = 0; i < array.length; i++) {
+    nuevoArray[i] = array[i] + 1;
   }
-  return false
+  return nuevoArray
 }
 
-function tienenMismaLongitud(str1, str2) {
-  // Devuelve "true" si las dos strings tienen la misma longitud
-  // De lo contrario, devuelve "false"
+function agregarItemAlFinalDelArray(array, elemento) {
+  // Añade el "elemento" al final del array
+  // y devuelve el array
   // Tu código:
-  if (str1.length == str2.length) {
-    return true
-  } 
-  return false
+  array[array.length] = elemento
+  return array
 }
 
-function menosQueNoventa(num) {
-  // Devuelve "true" si el argumento de la función "num" es menor que noventa
-  // De lo contrario, devuelve "false"
+function agregarItemAlComienzoDelArray(array, elemento) {
+  // Añade el "elemento" al comienzo del array
+  // y devuelve el array
+  // Pista: usa el método `.unshift`
   // Tu código:
-  if (num < 90) {
-    return true
+  array.unshift(elemento)
+  return array
+}
+
+function dePalabrasAFrase(palabras) {
+  // "palabras" es un array de strings/cadenas
+  // Devuelve un string donde todas las palabras estén concatenadas
+  // con espacios entre cada palabra
+  // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
+  // Tu código:
+  return palabras.join(' ')
+}
+
+function arrayContiene(array, elemento) {
+  // Comprueba si el elemento existe dentro de "array"
+  // Devuelve "true" si está, o "false" si no está
+  // Tu código:
+  return array.includes(elemento)
+}
+
+function agregarNumeros(numeros) {
+  // "array" debe ser una matriz de enteros (int/integers)
+  // Suma todos los enteros y devuelve el valor
+  // Tu código:
+  var suma = 0
+  for (var i = 0; i < numeros.length; i++) {
+    suma = suma + numeros[i]
   }
-  return false
+  return suma
 }
 
-function mayorQueCincuenta(num) {
-  // Devuelve "true" si el argumento de la función "num" es mayor que cincuenta
-  // De lo contrario, devuelve "false"
+function promedioResultadosTest(resultadosTest) {
+  // "resultadosTest" debe ser una matriz de enteros (int/integers)
+  // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  if (num > 50) {
-    return true
+  return agregarNumeros(resultadosTest) / resultadosTest.length
+}
+
+function numeroMasGrande(numeros) {
+  // "numeros" debe ser una matriz de enteros (int/integers)
+  // Devuelve el número más grande
+  // Tu código:
+  var maximo = numeros[0]
+  for (var i = 0; i < numeros.length; i++)
+    if(numeros[i] > maximo) {
+      maximo = numeros[i]
+    }
+    return maximo
+}
+
+function multiplicarArgumentos() {
+  // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
+  // Si no se pasan argumentos devuelve 0
+  // Si se pasa un argumento, simplemente devuélvelo
+  // Tu código:
+  if (arguments.length < 1) return 0
+  var total = 1 
+  for (var i = 0; i < arguments.length; i++) {
+    total = total * arguments[i]
   }
-  return false
+  return total
 }
-
-function obtenerResto(x, y) {
-  // Obten el resto de la división de "x" entre "y"
-  // Tu código:
-  return x % y
-}
-
-function esPar(num) {
-  // Devuelve "true" si "num" es par
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  if (num %2 == 0) {
-    return true
-  }
-  return false
-}
-
-function esImpar(num) {
-  // Devuelve "true" si "num" es impar
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  if (num %2 !== 0) {
-    return true
-  }
-  return false
-}
-
-function elevarAlCuadrado(num) {
-  // Devuelve el valor de "num" elevado al cuadrado
-  // ojo: No es raiz cuadrada!
-  // Tu código:
-  return Math.pow(num, 2)
-}
-
-function elevarAlCubo(num) {
-  // Devuelve el valor de "num" elevado al cubo
-  // Tu código:
-  return Math.pow (num, 3)
-}
-
-function elevar(num, exponent) {
-  // Devuelve el valor de "num" elevado al exponente dado en "exponent"
-  // Tu código:
-  return Math.pow (num, exponent)
-}
-
-function redondearNumero(num) {
-  // Redondea "num" y devuélvelo
-  // Tu código:
-  return Math.round(num)
-}
-
-function redondearHaciaArriba(num) {
-  // Redondea "num" hacia arriba y devuélvelo
-  // Tu código:
-  return Math.ceil(num)
-}
-
-function agregarSimboloExclamacion(str) {
-  // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
-  // Ejemplo: "hello world" pasaría a ser "hello world!"
-  // Tu código:
-  return str + '!'
-}
-
-function combinarNombres(nombre, apellido) {
-  // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
-  // Ejemplo: "Soy", "Henry" -> "Soy Henry"
-  // Tu código:
- var combinacion = nombre + ' ' + apellido
- return combinacion
-}
-
-function obtenerSaludo(nombre) {
-  // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
-  // "Martin" -> "Hola Martin!"
-  // Tu código:
- return 'Hola ' + nombre + '!'
-}
-
-function obtenerAreaRectangulo(alto, ancho) {
-  // Retornar el area de un cuadrado teniendo su altura y ancho
-  // Tu código:
-  return alto * ancho
-}
-
 
 // No modificar nada debajo de esta línea
 // --------------------------------
 
 module.exports = {
-  nuevaString,
-  nuevoNum,
-  nuevoBool,
-  nuevaResta,
-  nuevaMultiplicacion,
-  nuevoModulo,
-  devolverString,
-  tienenMismaLongitud,
-  sonIguales,
-  menosQueNoventa,
-  mayorQueCincuenta,
-  suma,
-  resta,
-  divide,
-  multiplica,
-  obtenerResto,
-  esPar,
-  esImpar,
-  elevarAlCuadrado,
-  elevarAlCubo,
-  elevar,
-  redondearNumero,
-  redondearHaciaArriba,
-  agregarSimboloExclamacion,
-  combinarNombres,
-  obtenerSaludo,
-  obtenerAreaRectangulo,
+  devolverPrimerElemento,
+  devolverUltimoElemento,
+  obtenerLargoDelArray,
+  incrementarPorUno,
+  agregarItemAlFinalDelArray,
+  agregarItemAlComienzoDelArray,
+  dePalabrasAFrase,
+  arrayContiene,
+  agregarNumeros,
+  promedioResultadosTest,
+  numeroMasGrande,
+  multiplicarArgumentos,
 };
